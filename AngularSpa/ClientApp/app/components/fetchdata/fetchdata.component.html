@@ -1,0 +1,54 @@
+<!--<form [formGroup]="transactionForm" novalidate (ngSubmit)="save(transactionForm.value, transactionForm.valid)">
+    <div class="form-group">
+        <label class="center-block">
+            Amount:
+            <input type="number" class="form-control" formControlName="amount" />
+            <small [hidden]="transactionForm.controls.amount.valid || (transactionForm.controls.amount.pristine && !submitted)">
+                Amount is required
+            </small>
+        </label>
+    </div>
+    <div class="form-group">
+        <label class="center-block">
+            Transaction type:
+            <select class="form-control" formControlName="transactionType">
+                <option value="">Select Transaction Type</option>
+                <option value="DR">Debit</option>
+                <option value="CR">Credit</option>
+            </select>
+            <small [hidden]="transactionForm.controls.transactionType.valid || (transactionForm.controls.transactionType.pristine && !submitted)">
+                Transaction type is required
+            </small>
+        </label>
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+
+<p>Form value: {{ transactionForm.value | json }}</p>
+<p>Form status: {{ transactionForm.status | json }}</p>-->
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.dateFormatted }}</td>
+            <td>{{ forecast.temperatureC }}</td>
+            <td>{{ forecast.temperatureF }}</td>
+            <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table>
